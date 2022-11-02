@@ -3,11 +3,12 @@
 using namespace std;
 
 int main() {
-    int count;
+    unsigned long long int count;
     cin >> count;
+
     vector<pair<string, string>> tree;
     vector<string>s, d;
-    for(int i = 0; i < count; i++){
+    for(unsigned long long int i = 0; i < count; i++){
         string parent,child;
         cin >> parent >> child;
         tree.emplace_back(parent,child);
@@ -15,6 +16,10 @@ int main() {
 
     string start, dest;
     cin >> start >> dest;
+    if(!(start.compare(dest))){
+        cout << 0 << endl;
+        return 0;
+    }
     while(true){
         bool flag = true;
         for(auto iter = tree.begin(); iter != tree.end(); iter++){
@@ -44,6 +49,7 @@ int main() {
         }
     }
     int result;
+
     int x =0; int y;
     for(auto i= s.begin(); i != s.end(); i++){
         bool flag = true;
@@ -63,4 +69,7 @@ int main() {
 
     cout << result << endl;
 
+    string c1, c2;
+    cin >> c1 >> c2;
+    cout << c1.compare(c2);
 }
