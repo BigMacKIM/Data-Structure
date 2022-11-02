@@ -69,7 +69,4 @@ int main() {
 
     cout << result << endl;
 
-    string c1, c2;
-    cin >> c1 >> c2;
-    cout << c1.compare(c2);
 }
